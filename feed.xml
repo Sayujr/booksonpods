@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<channel>
+<title>Books on Pods</title>
+<link>https://sayujr.github.io/booksonpods/</link>
+<language>en</language>
+<description>Two-host audio lessons on books and plays, with the text recited and critics' views discussed.</description>
+<itunes:author>Riku Sayuj</itunes:author>
+<itunes:image href="https://sayujr.github.io/booksonpods/cover.png"/>
+<itunes:block>Yes</itunes:block>
+<item>
+<title>Love's Labour's Lost 1. The Oath and the Arrival</title>
+<description>Act 1 Scene 1 and Act 2. The academy oath, Berowne's resistance, the Princess's arrival, and the first battle of wits.</description>
+<enclosure url="https://sayujr.github.io/booksonpods/episodes/lll-01-oath-and-arrival.mp3" length="9808173" type="audio/mpeg"/>
+<guid isPermaLink="false">lll-01</guid>
+<pubDate>Fri, 16 Oct 2026 18:05:00 -0400</pubDate>
+<itunes:duration>817</itunes:duration>
+</item>
+</channel>
+</rss>
