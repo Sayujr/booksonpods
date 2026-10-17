@@ -8,8 +8,8 @@
 <itunes:summary>Conversations about books and plays, old and new. Two hosts read the best passages and discuss their impressions as well as what critics and scholars have said about them.</itunes:summary>
 <itunes:category text="Arts"><itunes:category text="Books"/></itunes:category>
 <itunes:author>BooksonPods</itunes:author>
+<itunes:explicit>false</itunes:explicit>
 <itunes:image href="https://raw.githubusercontent.com/Sayujr/booksonpods/main/cover.png"/>
-<itunes:block>Yes</itunes:block>
 <item>
 <title>Love's Labour's Lost 1. The Oath and the Arrival</title>
 <description>Act 1 Scene 1 and Act 2. The academy oath, Berowne's resistance, the Princess's arrival, and the first battle of wits.</description>
