@@ -19,5 +19,13 @@
 <pubDate>Fri, 16 Oct 2026 18:05:00 -0400</pubDate>
 <itunes:duration>817</itunes:duration>
 </item>
+<item>
+<title>Love's Labour's Lost 2. Below Stairs</title>
+<description>Act 1 Scene 2 and Act 3. Armado, Moth, Costard and Jaquenetta, the remuneration joke, and Berowne's 'And I, forsooth, in love!'</description>
+<enclosure url="https://raw.githubusercontent.com/Sayujr/booksonpods/main/episodes/lll-02-below-stairs.mp3" length="13978989" type="audio/mpeg"/>
+<guid isPermaLink="false">lll-02</guid>
+<pubDate>Fri, 16 Oct 2026 22:10:07 -0400</pubDate>
+<itunes:duration>1164</itunes:duration>
+</item>
 </channel>
 </rss>
