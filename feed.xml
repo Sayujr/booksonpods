@@ -4,8 +4,8 @@
 <title>Books on Pods</title>
 <link>https://github.com/Sayujr/booksonpods</link>
 <language>en</language>
-<description>Books on Pods is a listening companion for serious readers. Each series takes one work, a novel, a nonfiction book, a play, or a collection of stories, poems or essays, and moves through it in conversation. Classics and new prize winners alike.</description>
-<itunes:summary>Books on Pods is a listening companion for serious readers. Each series takes one work, a novel, a nonfiction book, a play, or a collection of stories, poems or essays, and moves through it in conversation. Classics and new prize winners alike.</itunes:summary>
+<description>Conversations about books and plays, old and new. Two hosts read the best passages and discuss their impressions as well as what critics and scholars have said about them.</description>
+<itunes:summary>Conversations about books and plays, old and new. Two hosts read the best passages and discuss their impressions as well as what critics and scholars have said about them.</itunes:summary>
 <itunes:category text="Arts"><itunes:category text="Books"/></itunes:category>
 <itunes:author>BooksonPods</itunes:author>
 <itunes:image href="https://raw.githubusercontent.com/Sayujr/booksonpods/main/cover.png"/>
