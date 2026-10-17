@@ -9,6 +9,7 @@
 <itunes:category text="Arts"><itunes:category text="Books"/></itunes:category>
 <itunes:author>BooksonPods</itunes:author>
 <itunes:explicit>false</itunes:explicit>
+<itunes:block>Yes</itunes:block>
 <itunes:image href="https://raw.githubusercontent.com/Sayujr/booksonpods/main/cover.png"/>
 <item>
 <title>Love's Labour's Lost 1. The Oath and the Arrival</title>
