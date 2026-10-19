@@ -91,5 +91,13 @@
 <pubDate>Mon, 19 Oct 2026 11:27:00 -0400</pubDate>
 <itunes:duration>1543</itunes:duration>
 </item>
+<item>
+<title>Julius Caesar 2. Storm and Conscience</title>
+<description>Act 1 Scene 3 and Act 2 Scene 1. The night of omens, Cicero's warning about construing signs, Brutus's orchard soliloquy and the forged letter, the conspirators' meeting, Portia's wound and Ligarius, with Fortin, Charney, Miles, Vawter, Theobald, Montaigne, Liebler, Kahn, Hazlitt and Anson.</description>
+<enclosure url="https://raw.githubusercontent.com/Sayujr/booksonpods/main/episodes/jc-02-storm-conscience.mp3" length="17132877" type="audio/mpeg"/>
+<guid isPermaLink="false">jc-02</guid>
+<pubDate>Mon, 19 Oct 2026 12:03:46 -0400</pubDate>
+<itunes:duration>1427</itunes:duration>
+</item>
 </channel>
 </rss>
