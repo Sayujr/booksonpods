@@ -67,5 +67,13 @@
 <pubDate>Mon, 19 Oct 2026 03:35:29 -0400</pubDate>
 <itunes:duration>1764</itunes:duration>
 </item>
+<item>
+<title>Parable of the Sower. Octavia E. Butler</title>
+<description>Octavia Butler's 1993 novel, set in a burning 2024 California: prophecy or warning, Earthseed and hyperempathy, Butler's life and notebooks, the critics, the opera, the Mars landing site, and how prescient it really is. No spoilers for the ending.</description>
+<enclosure url="https://raw.githubusercontent.com/Sayujr/booksonpods/main/episodes/sower-octavia-butler.mp3" length="23028237" type="audio/mpeg"/>
+<guid isPermaLink="false">sower-01</guid>
+<pubDate>Mon, 19 Oct 2026 07:41:01 -0400</pubDate>
+<itunes:duration>1918</itunes:duration>
+</item>
 </channel>
 </rss>
