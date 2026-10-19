@@ -107,5 +107,13 @@
 <pubDate>Mon, 19 Oct 2026 12:42:57 -0400</pubDate>
 <itunes:duration>1566</itunes:duration>
 </item>
+<item>
+<title>Julius Caesar 4. Two Speeches</title>
+<description>Act 3 Scene 2. Brutus's prose oration and Antony's 'Friends, Romans, countrymen', the will, the mantle and the wounds, Mischief, thou art afoot, with Wills on rhetoric and chiasmus, Plutarch on Brutus's laconic style, Appian, Suetonius, Paster, Charney and Baldwin on Elizabethan schooling.</description>
+<enclosure url="https://raw.githubusercontent.com/Sayujr/booksonpods/main/episodes/jc-04-two-speeches.mp3" length="19156941" type="audio/mpeg"/>
+<guid isPermaLink="false">jc-04</guid>
+<pubDate>Mon, 19 Oct 2026 13:21:00 -0400</pubDate>
+<itunes:duration>1596</itunes:duration>
+</item>
 </channel>
 </rss>
