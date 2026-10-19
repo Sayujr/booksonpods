@@ -59,5 +59,13 @@
 <pubDate>Mon, 19 Oct 2026 02:03:59 -0400</pubDate>
 <itunes:duration>3014</itunes:duration>
 </item>
+<item>
+<title>Julius Caesar Extra. Two Old Romans</title>
+<description>The hosts play an old Brutus and an old Antony, thirty years after a Philippi where nobody died, arguing over honour, rhetoric, the easy choice, and what the critics have said about them both.</description>
+<enclosure url="https://raw.githubusercontent.com/Sayujr/booksonpods/main/episodes/jc-09-old-romans.mp3" length="21177549" type="audio/mpeg"/>
+<guid isPermaLink="false">jc-09</guid>
+<pubDate>Mon, 19 Oct 2026 03:35:29 -0400</pubDate>
+<itunes:duration>1764</itunes:duration>
+</item>
 </channel>
 </rss>
