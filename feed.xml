@@ -99,5 +99,13 @@
 <pubDate>Mon, 19 Oct 2026 12:03:46 -0400</pubDate>
 <itunes:duration>1427</itunes:duration>
 </item>
+<item>
+<title>Julius Caesar 3. The Ides</title>
+<description>Act 2 Scene 2 to Act 3 Scene 1. Calpurnia's dream and Decius's reading of it, Artemidorus, the northern star, the assassination and Et tu Brute, the bloodied hands, How many ages hence, and Antony alone with the body, with Plutarch, Suetonius, Girard, Paster, Kahn, Charney, Phillips, MacCallum, Knight and Hazlitt.</description>
+<enclosure url="https://raw.githubusercontent.com/Sayujr/booksonpods/main/episodes/jc-03-the-ides.mp3" length="18792621" type="audio/mpeg"/>
+<guid isPermaLink="false">jc-03</guid>
+<pubDate>Mon, 19 Oct 2026 12:42:57 -0400</pubDate>
+<itunes:duration>1566</itunes:duration>
+</item>
 </channel>
 </rss>
