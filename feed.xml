@@ -83,5 +83,13 @@
 <pubDate>Mon, 19 Oct 2026 08:43:30 -0400</pubDate>
 <itunes:duration>2522</itunes:duration>
 </item>
+<item>
+<title>Julius Caesar 1. The Feast of Lupercal</title>
+<description>Act 1 Scenes 1 and 2. The cobbler and the tribunes, the Lupercal, the Soothsayer, Cassius as Brutus's mirror, the Colossus speech, Caesar's deaf ear, Casca's crown report and 'Greek to me', with Rymer, Kahn, Foakes, Vawter, Miles, Anson, MacCallum, Liebler, Girard and Hazlitt.</description>
+<enclosure url="https://raw.githubusercontent.com/Sayujr/booksonpods/main/episodes/jc-01-lupercal.mp3" length="18516429" type="audio/mpeg"/>
+<guid isPermaLink="false">jc-01</guid>
+<pubDate>Mon, 19 Oct 2026 11:27:00 -0400</pubDate>
+<itunes:duration>1543</itunes:duration>
+</item>
 </channel>
 </rss>
