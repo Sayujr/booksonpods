@@ -124,23 +124,21 @@ button { font: inherit; cursor: pointer; }
 <div class="wrap">
   <header class="cover">
     <div class="airline" aria-hidden="true"></div>
-    <div class="kicker">A correspondence · October 2026 to April 2027</div>
     <h1>Point by Point</h1>
-    <p>Letters, emails and postcards, with a review of <em>The Correspondent</em> by Virginia Evans. Open them one at a time, in the order they arrived.</p>
-    <div><button class="linkish" id="restart" type="button" hidden>Start again from the first letter</button></div>
+    <p>A correspondence, with a review of <em>The Correspondent</em> by Virginia Evans</p>
+    <div><button class="linkish" id="restart" type="button" hidden>Start again</button></div>
   </header>
   <main id="stack" class="wrap" aria-live="polite"></main>
   <div id="end" class="end" hidden>
-    <div>No further post, yet.</div>
-    <button class="linkish" id="again" type="button">Read from the beginning</button>
+    <button class="linkish" id="again" type="button">Start again</button>
   </div>
 </div>
 
 <nav class="dock" aria-label="Letter navigation">
   <div class="inner">
-    <div class="count" id="count"></div>
+    <div class="count" id="count" aria-hidden="true"></div>
     <button class="btn ghost" id="all" type="button">Show all</button>
-    <button class="btn" id="next" type="button">Open the next letter</button>
+    <button class="btn" id="next" type="button">Next letter</button>
   </div>
 </nav>
 
@@ -178,9 +176,9 @@ function save() { try { localStorage.setItem('pbp-shown', String(shown)); } catc
 function updateDock() {
   const done = shown >= LETTERS.length;
   const n = LETTERS[shown];
-  count.innerHTML = done ? `All ${LETTERS.length} opened` : `${shown} of ${LETTERS.length} opened<span class="next">Next, ${KIND[n.kind].toLowerCase()} from ${n.from}, ${n.date}</span>`;
+  count.textContent = '';
   nextBtn.disabled = done; allBtn.hidden = done;
-  nextBtn.textContent = done ? 'All opened' : 'Open the next letter';
+  nextBtn.textContent = 'Next letter';
   endEl.hidden = !done; restart.hidden = shown <= 1;
 }
 function showUpTo(target, animateLast) {
