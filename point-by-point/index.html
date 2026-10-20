@@ -60,7 +60,7 @@ header.cover { padding-block: 4.5rem 1rem; text-align: left; display: flex; flex
 .airline { height: 8px; width: 9rem; background: repeating-linear-gradient(-45deg, var(--air-red) 0 10px, transparent 10px 14px, var(--air-blue) 14px 24px, transparent 24px 28px); border-radius: 1px; }
 
 /* sheets */
-.sheet { position: relative; background: var(--paper); box-shadow: var(--shadow); border-radius: 3px; padding: 2.4rem 2.2rem 2.2rem; min-width: 0; }
+.sheet { scroll-margin-top: 1.25rem; position: relative; background: var(--paper); box-shadow: var(--shadow); border-radius: 3px; padding: 2.4rem 2.2rem 2.2rem; min-width: 0; }
 .sheet.letter, .sheet.open { border: 1px solid var(--paper-edge); }
 .sheet.open { border-image: repeating-linear-gradient(-45deg, var(--air-red) 0 10px, var(--paper) 10px 14px, var(--air-blue) 14px 24px, var(--paper) 24px 28px) 8; border-width: 8px; border-style: solid; }
 .sheet p { margin: 0 0 1em; }
@@ -119,7 +119,7 @@ button { font: inherit; cursor: pointer; }
 .btn.ghost { background: var(--paper); color: var(--desk-ink); border: 1px solid var(--paper-edge); }
 .btn:focus-visible, .linkish:focus-visible { outline: 2px solid var(--air-red); outline-offset: 3px; }
 .btn[disabled] { opacity: .5; cursor: default; }
-.end { text-align: center; font-family: var(--f-display); font-style: italic; font-size: 1.5rem; color: var(--desk-ink); display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.end { padding-top: 1rem; text-align: center; font-family: var(--f-display); font-style: italic; font-size: 1.5rem; color: var(--desk-ink); display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 .linkish { background: none; border: 0; color: var(--desk-ink); text-decoration: underline; text-underline-offset: 3px; font-family: var(--f-mono); font-size: .75rem; letter-spacing: .06em; padding: 0; }
 </style>
 
@@ -128,19 +128,14 @@ button { font: inherit; cursor: pointer; }
     <div class="airline" aria-hidden="true"></div>
     <h1>Point by Point</h1>
     <p>A correspondence, with a review of <em>The Correspondent</em> by Virginia Evans</p>
-    <div><button class="linkish" id="restart" type="button" hidden>Start again</button></div>
   </header>
-  <main id="stack" class="wrap" aria-live="polite"></main>
-  <div id="end" class="end" hidden>
-    <button class="linkish" id="again" type="button">Start again</button>
-  </div>
+  <main id="stack" class="wrap"></main>
+  <div class="end"><button class="linkish" id="top" type="button">Back to the first letter</button></div>
 </div>
 
 <nav class="dock" aria-label="Letter navigation">
   <div class="inner">
-    <div class="count" id="count" aria-hidden="true" hidden></div>
     <button class="btn ghost" id="prev" type="button">Previous</button>
-    <button class="btn ghost" id="all" type="button">Show all</button>
     <button class="btn" id="next" type="button">Next letter</button>
   </div>
 </nav>
@@ -150,11 +145,8 @@ const LETTERS = [{"n": 1, "date": "October 19, 2026", "meta": "Open letter from 
 const KIND = { letter: 'Letter', email: 'Email', postcard: 'Postcard', card: 'Card', open: 'Open letter' };
 const stack = document.getElementById('stack');
 const nextBtn = document.getElementById('next');
-const allBtn = document.getElementById('all');
-const count = document.getElementById('count');
-const endEl = document.getElementById('end');
-const restart = document.getElementById('restart');
-let shown = 0;
+const prevBtn = document.getElementById('prev');
+const smooth = () => matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
 
 function shortDate(d) { const m = d.match(/^(\w+) (\d+), (\d+)$/); return m ? { md: m[1].slice(0, 3) + ' ' + m[2], y: m[3] } : { md: d, y: '' }; }
 function paras(list) { return list.map(b => `<p class="${b.cls}">${b.html}</p>`).join(''); }
@@ -175,60 +167,49 @@ function render(l) {
   return el;
 }
 
-function save() { try { localStorage.setItem('pbp-shown', String(shown)); } catch (e) {} }
-function updateDock() {
-  const done = shown >= LETTERS.length;
-  const n = LETTERS[shown];
-  count.textContent = '';
-  nextBtn.disabled = done; allBtn.hidden = done;
-  nextBtn.textContent = 'Next letter';
-  endEl.hidden = !done; restart.hidden = shown <= 1;
-}
-function showUpTo(target, animateLast) {
-  while (shown < target && shown < LETTERS.length) {
-    const el = render(LETTERS[shown]);
-    if (animateLast && shown === target - 1) el.classList.add('arrive');
-    stack.appendChild(el); shown++;
-  }
-  save(); updateDock();
-}
-function openNext() {
-  if (shown >= LETTERS.length) return;
-  showUpTo(shown + 1, true);
-  const el = document.getElementById('letter-' + shown);
-  el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
-}
-function reset() { stack.innerHTML = ''; shown = 0; showUpTo(1, false); window.scrollTo({ top: 0 }); }
+const frag = document.createDocumentFragment();
+LETTERS.forEach(l => frag.appendChild(render(l)));
+stack.appendChild(frag);
+const sheets = [...stack.querySelectorAll('.sheet')];
 
+const LINE = 96;
 function currentIndex() {
-  const sheets = stack.querySelectorAll('.sheet');
-  let cur = 0;
-  sheets.forEach((el, i) => { if (el.getBoundingClientRect().top <= 120) cur = i; });
+  let cur = -1;
+  sheets.forEach((el, i) => { if (el.getBoundingClientRect().top <= LINE) cur = i; });
   return cur;
 }
-function goPrev() {
-  const sheets = stack.querySelectorAll('.sheet');
-  const i = currentIndex();
-  const top = sheets[i] ? sheets[i].getBoundingClientRect().top : 0;
-  const target = top < -40 ? i : i - 1;
-  if (target < 0) { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
-  sheets[target].scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+function go(i) {
+  if (i < 0) { window.scrollTo({ top: 0, behavior: smooth() }); return; }
+  sheets[Math.min(i, sheets.length - 1)].scrollIntoView({ behavior: smooth(), block: 'start' });
 }
-const prevBtn = document.getElementById('prev');
+function goNext() { go(currentIndex() + 1); }
+function goPrev() {
+  const i = currentIndex();
+  if (i < 0) return;
+  const top = sheets[i].getBoundingClientRect().top;
+  go(top < -40 ? i : i - 1);
+}
+function update() {
+  const i = currentIndex();
+  const atEnd = i >= sheets.length - 1;
+  nextBtn.disabled = atEnd;
+  prevBtn.disabled = window.scrollY < 10;
+  try { localStorage.setItem('pbp-at', String(Math.max(i, 0))); } catch (e) {}
+}
+let ticking = false;
+window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { update(); ticking = false; }); } }, { passive: true });
+
+nextBtn.addEventListener('click', goNext);
 prevBtn.addEventListener('click', goPrev);
-nextBtn.addEventListener('click', openNext);
-allBtn.addEventListener('click', () => showUpTo(LETTERS.length, false));
-document.getElementById('again').addEventListener('click', reset);
-restart.addEventListener('click', reset);
+document.getElementById('top').addEventListener('click', () => go(0));
 document.addEventListener('keydown', e => {
-  if (e.target.closest('input, textarea')) return;
-  if (e.key === 'ArrowRight' || e.key === 'n' || e.key === 'j') { e.preventDefault(); openNext(); }
-  if (e.key === 'ArrowLeft' || e.key === 'p' || e.key === 'k') { e.preventDefault(); goPrev(); }
+  if (e.target.closest('input, textarea, button')) return;
+  if (e.key === 'ArrowRight') { e.preventDefault(); goNext(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); }
 });
 
-let start = 1;
-try { const v = parseInt(localStorage.getItem('pbp-shown'), 10); if (v > 1 && v <= LETTERS.length) start = v; } catch (e) {}
-showUpTo(start, false);
+try { const v = parseInt(localStorage.getItem('pbp-at'), 10); if (v > 0 && v < sheets.length) sheets[v].scrollIntoView({ block: 'start' }); } catch (e) {}
+update();
 </script>
 
 </body>
