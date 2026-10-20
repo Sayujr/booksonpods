@@ -60,7 +60,7 @@ header.cover { padding-block: 4.5rem 1rem; text-align: left; display: flex; flex
 .airline { height: 8px; width: 9rem; background: repeating-linear-gradient(-45deg, var(--air-red) 0 10px, transparent 10px 14px, var(--air-blue) 14px 24px, transparent 24px 28px); border-radius: 1px; }
 
 /* sheets */
-.sheet { scroll-margin-top: 1.25rem; position: relative; background: var(--paper); box-shadow: var(--shadow); border-radius: 3px; padding: 2.4rem 2.2rem 2.2rem; min-width: 0; }
+.sheet { position: relative; background: var(--paper); box-shadow: var(--shadow); border-radius: 3px; padding: 2.4rem 2.2rem 2.2rem; min-width: 0; }
 .sheet.letter, .sheet.open { border: 1px solid var(--paper-edge); }
 .sheet.open { border-image: repeating-linear-gradient(-45deg, var(--air-red) 0 10px, var(--paper) 10px 14px, var(--air-blue) 14px 24px, var(--paper) 24px 28px) 8; border-width: 8px; border-style: solid; }
 .sheet p { margin: 0 0 1em; }
@@ -107,6 +107,14 @@ header.cover { padding-block: 4.5rem 1rem; text-align: left; display: flex; flex
 @keyframes arrive { from { transform: translateY(18px) rotate(-.6deg); opacity: .2; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .sheet.arrive { animation: none; } }
 
+
+/* one letter per screen */
+html { scroll-snap-type: y proximity; }
+#stack { display: flex; flex-direction: column; }
+.slot { min-height: 100vh; min-height: 100svh; scroll-snap-align: start; scroll-margin-top: 0; display: flex; flex-direction: column; justify-content: center; padding-block: 3.5rem 6.5rem; }
+.slot + .slot { border-top: 1px solid var(--paper-edge); }
+.slot .sheet { scroll-margin-top: 0; }
+
 /* dock */
 .dock { position: fixed; left: 0; right: 0; bottom: 0; padding: .8rem max(16px, env(safe-area-inset-right, 0px)) calc(.8rem + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: linear-gradient(to top, var(--desk) 65%, transparent); display: flex; justify-content: center; }
 .dock .inner { max-width: 40rem; width: 100%; display: flex; align-items: center; justify-content: flex-end; gap: .6rem; }
@@ -129,7 +137,7 @@ button { font: inherit; cursor: pointer; }
     <h1>Point by Point</h1>
     <p>A correspondence, with a review of <em>The Correspondent</em> by Virginia Evans</p>
   </header>
-  <main id="stack" class="wrap"></main>
+  <main id="stack"></main>
   <div class="end"><button class="linkish" id="top" type="button">Back to the first letter</button></div>
 </div>
 
@@ -168,11 +176,11 @@ function render(l) {
 }
 
 const frag = document.createDocumentFragment();
-LETTERS.forEach(l => frag.appendChild(render(l)));
+LETTERS.forEach(l => { const slot = document.createElement('section'); slot.className = 'slot'; slot.appendChild(render(l)); frag.appendChild(slot); });
 stack.appendChild(frag);
-const sheets = [...stack.querySelectorAll('.sheet')];
+const sheets = [...stack.querySelectorAll('.slot')];
 
-const LINE = 96;
+const LINE = window.innerHeight * 0.45;
 function currentIndex() {
   let cur = -1;
   sheets.forEach((el, i) => { if (el.getBoundingClientRect().top <= LINE) cur = i; });
