@@ -109,12 +109,14 @@ header.cover { padding-block: 4.5rem 1rem; text-align: left; display: flex; flex
 
 /* dock */
 .dock { position: fixed; left: 0; right: 0; bottom: 0; padding: .8rem max(16px, env(safe-area-inset-right, 0px)) calc(.8rem + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: linear-gradient(to top, var(--desk) 65%, transparent); display: flex; justify-content: center; }
-.dock .inner { max-width: 40rem; width: 100%; display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+.dock .inner { max-width: 40rem; width: 100%; display: flex; align-items: center; justify-content: flex-end; gap: .6rem; }
+.dock .inner #prev { margin-right: auto; }
+@media (max-width: 480px) { .dock .inner .btn { padding: .75rem .85rem; font-size: .7rem; letter-spacing: .05em; } }
 .count { font-family: var(--f-mono); font-size: .75rem; color: var(--desk-ink); letter-spacing: .06em; flex: 1; min-width: 8rem; }
 .count .next { display: block; font-family: var(--f-body); font-style: italic; font-size: .95rem; letter-spacing: 0; color: var(--ink); }
 button { font: inherit; cursor: pointer; }
 .btn { font-family: var(--f-mono); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; border: 0; border-radius: 999px; padding: .85rem 1.3rem; background: var(--btn); color: var(--btn-ink); }
-.btn.ghost { background: transparent; color: var(--desk-ink); border: 1px solid var(--paper-edge); }
+.btn.ghost { background: var(--paper); color: var(--desk-ink); border: 1px solid var(--paper-edge); }
 .btn:focus-visible, .linkish:focus-visible { outline: 2px solid var(--air-red); outline-offset: 3px; }
 .btn[disabled] { opacity: .5; cursor: default; }
 .end { text-align: center; font-family: var(--f-display); font-style: italic; font-size: 1.5rem; color: var(--desk-ink); display: flex; flex-direction: column; align-items: center; gap: 1rem; }
@@ -136,7 +138,8 @@ button { font: inherit; cursor: pointer; }
 
 <nav class="dock" aria-label="Letter navigation">
   <div class="inner">
-    <div class="count" id="count" aria-hidden="true"></div>
+    <div class="count" id="count" aria-hidden="true" hidden></div>
+    <button class="btn ghost" id="prev" type="button">Previous</button>
     <button class="btn ghost" id="all" type="button">Show all</button>
     <button class="btn" id="next" type="button">Next letter</button>
   </div>
@@ -197,6 +200,22 @@ function openNext() {
 }
 function reset() { stack.innerHTML = ''; shown = 0; showUpTo(1, false); window.scrollTo({ top: 0 }); }
 
+function currentIndex() {
+  const sheets = stack.querySelectorAll('.sheet');
+  let cur = 0;
+  sheets.forEach((el, i) => { if (el.getBoundingClientRect().top <= 120) cur = i; });
+  return cur;
+}
+function goPrev() {
+  const sheets = stack.querySelectorAll('.sheet');
+  const i = currentIndex();
+  const top = sheets[i] ? sheets[i].getBoundingClientRect().top : 0;
+  const target = top < -40 ? i : i - 1;
+  if (target < 0) { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+  sheets[target].scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+}
+const prevBtn = document.getElementById('prev');
+prevBtn.addEventListener('click', goPrev);
 nextBtn.addEventListener('click', openNext);
 allBtn.addEventListener('click', () => showUpTo(LETTERS.length, false));
 document.getElementById('again').addEventListener('click', reset);
@@ -204,6 +223,7 @@ restart.addEventListener('click', reset);
 document.addEventListener('keydown', e => {
   if (e.target.closest('input, textarea')) return;
   if (e.key === 'ArrowRight' || e.key === 'n' || e.key === 'j') { e.preventDefault(); openNext(); }
+  if (e.key === 'ArrowLeft' || e.key === 'p' || e.key === 'k') { e.preventDefault(); goPrev(); }
 });
 
 let start = 1;
