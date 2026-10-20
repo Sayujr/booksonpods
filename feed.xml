@@ -139,5 +139,13 @@
 <pubDate>Mon, 19 Oct 2026 14:58:32 -0400</pubDate>
 <itunes:duration>1386</itunes:duration>
 </item>
+<item>
+<title>The Infinite Sadness of Small Appliances. Glenn Dixon, and Why We Cede Control</title>
+<description>A robot vacuum named Scout, a grieving widower, and the Grid. Why humans hand over control, with the Roomba photo leak, the Arkansas care algorithm, ElliQ, Kant, the Grand Inquisitor, Fromm, Tim Wu, Langdon Winner, Bainbridge, Carr, Zuboff, Forster's The Machine Stops, Postman, Whitehead and Ruth Schwartz Cowan. Then why there are no phones, with Mark Weiser, Albert Borgmann, Turkle, Bradbury and Haidt. No spoilers.</description>
+<enclosure url="https://raw.githubusercontent.com/Sayujr/booksonpods/main/episodes/infinite-sadness-small-appliances.mp3" length="26685549" type="audio/mpeg"/>
+<guid isPermaLink="false">appliances-01</guid>
+<pubDate>Tue, 20 Oct 2026 13:09:28 -0400</pubDate>
+<itunes:duration>2223</itunes:duration>
+</item>
 </channel>
 </rss>
