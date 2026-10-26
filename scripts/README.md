@@ -1,0 +1,23 @@
+# Books on Pods. Episode scripts
+
+Every episode script, in feed order. Character lines are the passages read aloud.
+
+1. [Love's Labour's Lost 1. The Oath and the Arrival](01-lll-01-the-oath-and-the-arrival.md)
+2. [Love's Labour's Lost 2. Below Stairs](02-lll-02-below-stairs.md)
+3. [Love's Labour's Lost 3. Letters Gone Astray](03-lll-03-letters-gone-astray.md)
+4. [Love's Labour's Lost 9. The Whole Play](04-lll-09-the-whole-play.md)
+5. [Julius Caesar 1. The Feast of Lupercal](05-jc-01-the-feast-of-lupercal.md)
+6. [Julius Caesar 2. Storm and Conscience](06-jc-02-storm-and-conscience.md)
+7. [Julius Caesar 3. The Ides](07-jc-03-the-ides.md)
+8. [Julius Caesar 4. Two Speeches](08-jc-04-two-speeches.md)
+9. [Julius Caesar 5. Mob and Death List](09-jc-05-mob-and-death-list.md)
+10. [Julius Caesar 6. The Quarrel](10-jc-06-the-quarrel.md)
+11. [Julius Caesar 7. Philippi](11-jc-07-philippi.md)
+12. [Julius Caesar 8. The Whole Play](12-jc-08-the-whole-play.md)
+13. [Julius Caesar Extra. Two Old Romans](13-jc-extra-two-old-romans.md)
+14. [Parable of the Sower. Octavia E. Butler](14-parable-of-the-sower.md)
+15. [The Correspondent. Virginia Evans, and the Life in Letters](15-the-correspondent.md)
+16. [The Correspondent. Solo version (script only, not recorded)](16-the-correspondent-solo-unrecorded.md)
+17. [The Infinite Sadness of Small Appliances. Glenn Dixon, and Why We Cede Control](17-infinite-sadness-of-small-appliances.md)
+18. [The Devotion of Suspect X. Drishyam, August 2, and the Tenth of March](18-suspect-x-drishyam.md)
+19. [N.R.I.](19-nri.md)
