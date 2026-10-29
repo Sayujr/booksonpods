@@ -171,5 +171,13 @@
 <pubDate>Thu, 29 Oct 2026 02:11:23 -0400</pubDate>
 <itunes:duration>2380</itunes:duration>
 </item>
+<item>
+<title>Responsive Math Teaching 3. Children's Mathematics</title>
+<description>Cognitively Guided Instruction, from Carpenter and Moser's research on how young children solve addition and subtraction problems to the 1989 experiment with 40 teachers, the 1996 four year study, and the 2001 follow up of teachers who kept growing. Problem types, children's strategies, a CGI classroom, and how it answers Direct Instruction.</description>
+<enclosure url="https://raw.githubusercontent.com/Sayujr/booksonpods/main/episodes/rmt-03-childrens-mathematics.mp3" length="27148653" type="audio/mpeg"/>
+<guid isPermaLink="false">rmt-03</guid>
+<pubDate>Thu, 29 Oct 2026 03:31:11 -0400</pubDate>
+<itunes:duration>2262</itunes:duration>
+</item>
 </channel>
 </rss>

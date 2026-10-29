@@ -23,3 +23,4 @@ Every episode script, in feed order. Character lines are the passages read aloud
 19. [N.R.I.](19-nri.md)
 20. [Responsive Math Teaching 1. The Story Being Sold](20-rmt-01-the-story-being-sold.md)
 21. [Responsive Math Teaching 2. Inside Teaching](21-rmt-02-inside-teaching.md)
+22. [Responsive Math Teaching 3. Children's Mathematics](22-rmt-03-childrens-mathematics.md)
