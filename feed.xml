@@ -163,5 +163,13 @@
 <pubDate>Thu, 29 Oct 2026 00:10:42 -0400</pubDate>
 <itunes:duration>3022</itunes:duration>
 </item>
+<item>
+<title>Responsive Math Teaching 2. Inside Teaching</title>
+<description>Mary Kennedy's study of 45 teachers and 499 classroom episodes, and what teachers are actually trying to do in a lesson. David Cohen's Mrs. Oublier, the problem of enactment, Lortie's apprenticeship of observation, the core practices movement, Kennedy's five persistent problems of practice, and her review of 28 professional development studies.</description>
+<enclosure url="https://raw.githubusercontent.com/Sayujr/booksonpods/main/episodes/rmt-02-inside-teaching.mp3" length="28568205" type="audio/mpeg"/>
+<guid isPermaLink="false">rmt-02</guid>
+<pubDate>Thu, 29 Oct 2026 02:11:23 -0400</pubDate>
+<itunes:duration>2380</itunes:duration>
+</item>
 </channel>
 </rss>

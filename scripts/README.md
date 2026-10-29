@@ -22,3 +22,4 @@ Every episode script, in feed order. Character lines are the passages read aloud
 18. [The Devotion of Suspect X. Drishyam, August 2, and the Tenth of March](18-suspect-x-drishyam.md)
 19. [N.R.I.](19-nri.md)
 20. [Responsive Math Teaching 1. The Story Being Sold](20-rmt-01-the-story-being-sold.md)
+21. [Responsive Math Teaching 2. Inside Teaching](21-rmt-02-inside-teaching.md)
