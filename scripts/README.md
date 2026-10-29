@@ -26,3 +26,4 @@ Every episode script, in feed order. Character lines are the passages read aloud
 22. [Responsive Math Teaching 3. Children's Mathematics](22-rmt-03-childrens-mathematics.md)
 23. [Responsive Math Teaching 4. The Problem Is Not the Question](23-rmt-04-problem-not-question.md)
 24. [Responsive Math Teaching 5. Learning to Notice](24-rmt-05-learning-to-notice.md)
+25. [Responsive Math Teaching 6. Orchestrating the Discussion](25-rmt-06-orchestrating-the-discussion.md)
