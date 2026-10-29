@@ -21,3 +21,4 @@ Every episode script, in feed order. Character lines are the passages read aloud
 17. [The Infinite Sadness of Small Appliances. Glenn Dixon, and Why We Cede Control](17-infinite-sadness-of-small-appliances.md)
 18. [The Devotion of Suspect X. Drishyam, August 2, and the Tenth of March](18-suspect-x-drishyam.md)
 19. [N.R.I.](19-nri.md)
+20. [Responsive Math Teaching 1. The Story Being Sold](20-rmt-01-the-story-being-sold.md)
