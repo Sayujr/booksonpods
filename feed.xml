@@ -211,5 +211,14 @@
 <pubDate>Thu, 29 Oct 2026 12:23:28 -0400</pubDate>
 <itunes:duration>2379</itunes:duration>
 </item>
+<item>
+<title>Protocols. Distance from the Retina</title>
+<description>Andrew Huberman's Protocols, read through one napkin. Light and the eye at the centre, then timing, body state and the extras, with the evidence getting shakier the further it travels from his lab. And the grief section that breaks the napkin, where maps, dopamine and prediction meet.</description>
+<enclosure url="https://raw.githubusercontent.com/Sayujr/booksonpods/main/episodes/protocols-distance-from-the-retina.mp3" length="27334413" type="audio/mpeg"/>
+<guid isPermaLink="false">protocols-01</guid>
+<pubDate>Sat, 07 Nov 2026 00:40:56 -0500</pubDate>
+<itunes:duration>2277</itunes:duration>
+<itunes:image href="https://raw.githubusercontent.com/Sayujr/booksonpods/main/art/protocols-napkin.jpg"/>
+</item>
 </channel>
 </rss>
